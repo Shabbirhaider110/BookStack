@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BookStack — Read & Publish</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo"
+          ><img
+            src="images/logo.svg"
+            alt="BookStack logo"
+            style="height: 36px"
+          /><span>BookStack</span></a
+        >
+        <nav class="menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="catalog.html">Catalog</a>
+          <a href="publish.html">Publishing</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge">📚 Your gateway to stories</div>
+          <h1 class="animate-text">
+            Discover Great Books,<br />
+            Publish Your Own
+          </h1>
+          <p class="animate-fade">
+            Explore a curated selection of titles from top authors. Ready to
+            publish? We’ll guide you from manuscript to bestseller.
+          </p>
+          <div class="row animate-buttons">
+            <a class="btn" href="catalog.html">Explore Catalog</a>
+            <a class="btn outline" href="publish.html">Publishing</a>
+          </div>
+        </div>
+        <div class="hero-art zoom-in">
+          <img
+            src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=1600&auto=format&fit=crop"
+            alt="Books"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="reveal">Featured Books</h2>
+        <div class="grid books-grid" id="featured"></div>
+      </div>
+    </section>
+    
+
+    <section class="section testimonials">
+      <div class="container">
+        <h2 class="reveal">What Our Readers Say</h2>
+        <div class="grid testimonials-grid">
+          <blockquote class="card pop-in">
+            “BookStack helped me find my favorite authors. Fast delivery &
+            amazing quality!” <span>— Ayesha</span>
+          </blockquote>
+          <blockquote class="card pop-in">
+            “As a writer, I published my first book here. The team was
+            supportive from start to finish.” <span>— Rehman</span>
+          </blockquote>
+          <blockquote class="card pop-in">
+            “Clean website, smooth checkout, and secure payments. Highly
+            recommend!” <span>— Sara</span>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container newsletter pop-in">
+        <h3>Join 10,000+ book lovers</h3>
+        <p>Subscribe to get updates on new arrivals and publishing tips.</p>
+        <form id="subscribe" class="row">
+          <input type="email" class="input" placeholder="Your Email" required />
+          <button class="btn success">Subscribe</button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo footer-logo">
+            <img src="images/logo.svg" alt="logo" style="height: 28px" /><span
+              >BookStack</span
+            >
+          </div>
+          <p>
+            Connecting readers with stories and helping authors publish
+            confidently.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="publish.html">Publishing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <a class="soc" href="https://web.whatsapp.com/"
+              ><img src="images/whatsapp.svg" alt="wa" style="width: 28px" /></a
+            ><a class="soc" href="https://www.facebook.com/"
+              ><img src="images/facebook.svg" alt="fb" style="width: 28px" /></a
+            ><a class="soc" href="https://www.instagram.com/"
+              ><img src="images/instagram.svg" alt="ig" style="width: 28px"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> BookStack. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="data.js"></script>
+    <script>
+      const grid = document.getElementById("featured");
+      BOOKS.slice(0, 6).forEach((b) => {
+        const card = document.createElement("div");
+        card.className = "card book-card reveal";
+        card.innerHTML = `${coverHTML(
+          b
+        )}<div class="card-body"><strong class="book-title">${
+          b.title
+        }</strong><div class="book-meta">${b.author} • ${
+          b.category
+        }</div><div class="row between"><span class="price">$${b.price.toFixed(
+          2
+        )}</span><button class="btn sm">Add to Cart</button></div></div>`;
+        card.querySelector("button").onclick = () => addToCart(b);
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a href="index.html" class="logo"
+          ><img src="images/logo.svg" alt="logo" style="height: 36px" /><span
+            >BookStack</span
+          ></a
+        >
+        <nav class="menu">
+          <a href="index.html">Home</a><a href="catalog.html">Catalog</a
+          ><a href="publish.html">Publishing</a
+          ><a href="contact.html">Contact</a
+          ><a href="cart.html" class="active">Cart</a>
+        </nav>
+      </div>
+    </header>
+    <section class="section">
+      <div class="container">
+        <h2>Your Cart <span id="cart-count" class="tag"></span></h2>
+        <div class="card scroll-x">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Book</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cart-body"></tbody>
+          </table>
+        </div>
+        <div class="cart-total">
+          <div class="row between">
+            <strong>Total:</strong><strong id="cart-total">$0.00</strong>
+          </div>
+          <div class="row end">
+            <a class="btn" href="catalog.html">Continue Shopping</a
+            ><a class="btn success" href="checkout.html">Checkout</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo footer-logo">
+            <img src="images/logo.svg" alt="logo" style="height: 28px" /><span
+              >BookStack</span
+            >
+          </div>
+          <p>
+            Connecting readers with stories and helping authors publish
+            confidently.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="foot-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Catalog</a></li>
+            <li><a href="publish.html">Publishing</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <a class="soc" href="https://web.whatsapp.com/"
+              ><img src="images/whatsapp.svg" alt="wa" style="width: 28px" /></a
+            ><a class="soc" href="https://www.facebook.com/"
+              ><img src="images/facebook.svg" alt="fb" style="width: 28px" /></a
+            ><a class="soc" href="https://www.instagram.com/"
+              ><img src="images/instagram.svg" alt="ig" style="width: 28px"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year"></span> BookStack. All rights reserved.
+      </div>
+    </footer>
+    <footer class="site-footer">
+      <div class="container footer-bottom-only">
+        © <span id="year"></span> BookStack
+      </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="data.js"></script>
+    <script src="cart-page.js"></script>
+  </body>
+</html>
