@@ -5,7 +5,7 @@ const BOOKS = [
     "author": "ANA HUANG",
     "price": 16.99,
     "category": "Romance",
-    "image": "images/elin-melaas-kBDBb88S0fE-unsplash.jpg"
+    "image": "elin-melaas-kBDBb88S0fE-unsplash.jpg"
   },
   {
     "id": "b2",
